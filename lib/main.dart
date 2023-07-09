@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:my_healthy_habit/home/welcome_page.dart';
+import 'package:my_healthy_habit/logins/signup_page.dart';
 
 import 'logins/login_page.dart';
+import 'logins/signup_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,10 +19,11 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
 
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+       // colorScheme: ColorScheme.fromSeed(seedColor: Colors.lightBlue),
+        //useMaterial3: true,
+        primarySwatch: Colors.blue,
       ),
-      home: LoginPage(),
+      home: WelcomePage(),
     );
   }
 }

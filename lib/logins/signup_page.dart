@@ -1,47 +1,51 @@
 import 'package:flutter/material.dart';
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({Key? key}) : super(key: key);
+class SignUpPage extends StatelessWidget {
+  const SignUpPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final double screenWidth = MediaQuery.of(context).size.width;
-    final double screenHeight = MediaQuery.of(context).size.height;
+    List images = [
+      "g.png",
+      "t.png",
+      "f.png",
 
-    return  Scaffold(
-      backgroundColor: Colors.white,
+    ];
+        final double screenWidth = MediaQuery.of(context).size.width;
+    final double screenHeight = MediaQuery.of(context).size.height;
+    return Scaffold(
+            backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Column(
           children: [
             Container(
               height: screenHeight * 0.35,
+              width: screenWidth*0.35,
               decoration: const BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage("img/loginimg.png"),
                   fit: BoxFit.cover,
                 ),
               ),
+              child: Column(
+                children: [
+                  SizedBox(height: screenHeight* 0.18,  ),
+                  CircleAvatar(
+                    radius:60,
+                    backgroundImage: AssetImage(
+                      "img/profile2.jpg"
+                    ),
+                  )
+                ],
+              ),
             ),
-            Container(
+          
+                 Container(
               margin: const EdgeInsets.symmetric(horizontal: 20),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    "Hello",
-                    style: TextStyle(
-                      fontSize: screenWidth * 0.1,
-                      //color: Colors.lightGreen,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  Text(
-                    "Sign in to your account",
-                    style: TextStyle(
-                      fontSize: screenWidth * 0.03,
-                      color: Colors.grey,
-                    ),
-                  ),
+                
                   SizedBox(height: screenHeight * 0.05),
                   Container(
                     decoration: BoxDecoration(
@@ -58,6 +62,10 @@ class LoginPage extends StatelessWidget {
                     ),
                     child: TextField(
                       decoration: InputDecoration(
+                        hintText: "your email here",
+                        prefixIcon: Icon(Icons.email,
+                         color: Colors.lightGreen,
+                         ),
                         focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(30),
                           borderSide: BorderSide(
@@ -94,6 +102,10 @@ class LoginPage extends StatelessWidget {
                     ),
                     child: TextField(
                       decoration: InputDecoration(
+                         hintText: "your password here",
+                        prefixIcon: Icon(Icons.password,
+                         color: Colors.lightGreen,
+                         ),
                         focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(30),
                           borderSide: BorderSide(
@@ -114,18 +126,18 @@ class LoginPage extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Row(
-                    children: [
-                      Expanded(child: Container()),
-                      Text(
-                        "Forgot your Password?",
-                        style: TextStyle(
-                          fontSize: screenWidth * 0.03,
-                          color: Colors.grey,
-                        ),
-                      ),
-                    ],
-                  ),
+                  // Row(
+                  //   children: [
+                  //     Expanded(child: Container()),
+                  //     Text(
+                  //       "Forgot your Password?",
+                  //       style: TextStyle(
+                  //         fontSize: screenWidth * 0.03,
+                  //         color: Colors.grey,
+                  //       ),
+                  //     ),
+                  //   ],
+                  // ),
                 ],
               ),
             ),
@@ -142,7 +154,7 @@ class LoginPage extends StatelessWidget {
               ),
               child: Center(
                 child: Text(
-                  "Sign in",
+                  "Sign Up",
                   style: TextStyle(
                     fontSize: screenWidth * 0.07,
                     fontWeight: FontWeight.bold,
@@ -153,25 +165,40 @@ class LoginPage extends StatelessWidget {
             ),
             SizedBox(height:screenWidth*0.07),
             RichText(text: TextSpan(
-              text:"Don\'t have an account?",
+              text:"Sign up using :",
+
               style: TextStyle(
                 color: Colors.grey,
-                fontSize: 20
+                fontSize: 16,
               ),
-              children: [
-                TextSpan(
-                  text: "Create",
-                  style: TextStyle(
-                    color: Colors.lightBlue,
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                  )
-                )
-              ]
-            ))
+              
+            ),),
+            Wrap(
+              children: List<Widget>.generate(
+                3, 
+                (index) {
+                  return Padding(
+                    padding:const EdgeInsets.all(10.0),
+                    child: CircleAvatar(
+                      radius: 30,
+                      backgroundColor: Colors.grey,
+                      child: CircleAvatar( 
+                            radius: 25,
+                            backgroundImage: AssetImage(
+                              "img/"+images[index]
+                            )
+                          ,
+                      ),
+                    ),
+                  );
+                }
+              ),
+            ),
           ],
         ),
       ),
+      
+
     );
   }
 }
