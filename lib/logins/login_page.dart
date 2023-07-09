@@ -13,36 +13,119 @@ class _LoginPageState extends State<LoginPage> {
     double w = MediaQuery.of(context).size.width;
     double h = MediaQuery.of(context).size.height;
     return Scaffold(
-      backgroundColor: Colors.white,
-      body: Column(
-        children:[
+        backgroundColor: Colors.white,
+        body: Column(children: [
           Container(
-
-            width:w,
-            height: h*0.3,
+            width: w,
+            height: h * 0.3,
             decoration: const BoxDecoration(
-             image: DecorationImage(
-              image: AssetImage(
-                "img/loginimg.jpg"
+              image: DecorationImage(
+                image: AssetImage("img/loginimg.jpg"),
               ),
-             ), 
             ),
-
-
           ),
-          Container (
-         child: const  Column(children: [
-              Text("Hello", style: TextStyle(
-                fontSize: 60,
-                fontWeight: FontWeight.bold
-              )
-              )
-            ]),
+          Container(
+            margin: const EdgeInsets.only(left: 20, right: 20),
+            width: w,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "Hello",
+                  style: TextStyle(fontSize: 60, fontWeight: FontWeight.bold),
+                ),
+                Text(
+                  "Sign in to your account",
+                  style: TextStyle(fontSize: 20, color: Colors.grey),
+                ),
+                SizedBox(
+                  height: 50,
+                ),
+                Container(
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(30),
+                      boxShadow: [
+                        BoxShadow(
+                            blurRadius: 10,
+                            spreadRadius: 7,
+                            offset: Offset(1, 1),
+                            color: Colors.grey.withOpacity(0.5))
+                      ]),
+                  child: TextField(
+                    decoration: InputDecoration(
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(30),
+                        borderSide:
+                            BorderSide(color: Colors.lightGreen, width: 1.0),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(30),
+                        borderSide:
+                            BorderSide(color: Colors.lightGreen, width: 1.0),
+                      ),
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(30)),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Container(
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(30),
+                      boxShadow: [
+                        BoxShadow(
+                            blurRadius: 10,
+                            spreadRadius: 7,
+                            offset: Offset(1, 1),
+                            color: Colors.grey.withOpacity(0.5))
+                      ]),
+                  child: TextField(
+                    decoration: InputDecoration(
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(30),
+                        borderSide:
+                            BorderSide(color: Colors.lightGreen, width: 1.0),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(30),
+                        borderSide:
+                            BorderSide(color: Colors.lightGreen, width: 1.0),
+                      ),
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(30)),
+                    ),
+                  ),
+                ),
+                Row(
+                  children: [
+                    Expanded(
+                      child: Container(),
+                    ),
+                    Text(
+                      "Forget your Password?",
+                      style: TextStyle(fontSize: 20, color: Colors.grey),
+                    ),
+                    Container(
+                      width: w,
+                      height: h * 0.3,
+                      decoration: const BoxDecoration(
+                          // image: DecorationImage(
+                          // image: AssetImage("img/loginimg.jpg"),
+                          ),
+                    ),
+                    //),
+                  ],
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+              ],
+            ),
           )
-        ]
-
-      )
-
-    );
+        ]));
   }
 }
