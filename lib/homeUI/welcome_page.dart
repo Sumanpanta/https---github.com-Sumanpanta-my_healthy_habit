@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+// ignore: unnecessary_import
 import 'package:flutter/cupertino.dart';
 
 class WelcomePage extends StatelessWidget {
@@ -37,9 +38,36 @@ const WelcomePage({super.key});
                     ),
                   )
                 ],
+                
               ),
             ),
-              
+
+            Container(
+              width: screenWidth,
+              margin: const EdgeInsets.only(left: 20),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children:[
+            
+                   Text(
+                    "Welcome",
+                    style: TextStyle(
+                      fontSize: 36,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                      const Text(
+                    "ABC@gmail.com",
+                    style: TextStyle(
+                      fontSize: 18,
+                      color: Colors.lightGreen,
+                    ),
+                  ),
+                ],
+                  
+              ),
+            ),
+           
               SizedBox(height: screenHeight * 0.1),
               Container(
                 width: screenWidth * 0.4,
@@ -53,7 +81,7 @@ const WelcomePage({super.key});
                 ),
                 child: Center(
                   child: Text(
-                    "Sign Up",
+                    "Sign Out",
                     style: TextStyle(
                       fontSize: screenWidth * 0.07,
                       fontWeight: FontWeight.bold,
@@ -63,15 +91,7 @@ const WelcomePage({super.key});
                 ),
               ),
               SizedBox(height: screenHeight * 0.07),
-              RichText(
-                text: TextSpan(
-                  text: "Sign up using:",
-                  style: TextStyle(
-                    color: Colors.grey,
-                    fontSize: 16,
-                  ),
-                ),
-              ),
+            
             ],
           ),
         ),

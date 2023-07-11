@@ -1,4 +1,8 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:my_healthy_habit/logins/signup_page.dart';
+
 
 class LoginPage extends StatelessWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -58,6 +62,10 @@ class LoginPage extends StatelessWidget {
                     ),
                     child: TextField(
                       decoration: InputDecoration(
+                            hintText: "your email here",
+                        prefixIcon: Icon(Icons.email,
+                         color: Colors.lightGreen,
+                         ),
                         focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(30),
                           borderSide: BorderSide(
@@ -94,6 +102,10 @@ class LoginPage extends StatelessWidget {
                     ),
                     child: TextField(
                       decoration: InputDecoration(
+                         hintText: "your password here",
+                        prefixIcon: Icon(Icons.password,
+                         color: Colors.lightGreen,
+                         ),
                         focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(30),
                           borderSide: BorderSide(
@@ -165,7 +177,8 @@ class LoginPage extends StatelessWidget {
                     color: Colors.lightBlue,
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
-                  )
+                  ),
+                  recognizer: TapGestureRecognizer()..onTap=()=>Get.to(()=>SignUpPage()),
                 )
               ]
             ))

@@ -1,4 +1,8 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+// ignore: unused_import
+import 'package:my_healthy_habit/logins/login_page.dart';
 
 class SignUpPage extends StatelessWidget {
   const SignUpPage({super.key});
@@ -39,7 +43,7 @@ class SignUpPage extends StatelessWidget {
                 ],
               ),
             ),
-          
+       
                  Container(
               margin: const EdgeInsets.symmetric(horizontal: 20),
               child: Column(
@@ -126,6 +130,8 @@ class SignUpPage extends StatelessWidget {
                       ),
                     ),
                   ),
+
+            
                   // Row(
                   //   children: [
                   //     Expanded(child: Container()),
@@ -163,6 +169,17 @@ class SignUpPage extends StatelessWidget {
                 ),
               ),
             ),
+            SizedBox(height:10),
+               RichText(
+              text:TextSpan(
+              recognizer: TapGestureRecognizer()..onTap=()=>Get.back(),
+              text: "Already Have a account?",
+              style: TextStyle(
+                fontSize: 15,
+                 color: Colors.black,
+                ),
+             ),
+             ),
             SizedBox(height:screenWidth*0.07),
             RichText(text: TextSpan(
               text:"Sign up using :",
